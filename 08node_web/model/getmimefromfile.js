@@ -12,4 +12,4 @@ exports.getMime=function(fs,extname){  /*获取后缀名的方法*/
     return Mimes[extname] || 'text/html';
 
 
-}
+};

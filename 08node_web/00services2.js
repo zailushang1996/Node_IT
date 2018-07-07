@@ -17,7 +17,6 @@ var mimeModel=require('./model/getmime.js');
 http.createServer(function(req,res){
 
 
-
 	//http://localhost:8001/news.html    /news.html
 	//http://localhost:8001/index.html    /index.html
 
