@@ -57,7 +57,7 @@ app.get('/',function(req,res){
         //查询数据
         var list=[];  /*放数据库里面查询的所有数据*/
 
-        var result=db.collection('user').find({});
+        var result=db.collection('student').find({});
 
 
         result.each(function(error,doc){
@@ -103,7 +103,7 @@ app.get('/add',function(req,res){
             return;
         }
 
-        db.collection('user').insertOne({"name":'lisi',"age":40},function(error,data){
+        db.collection('student').insertOne({"name":'lisi',"age":40},function(error,data){
 
             if(error){
                 console.log('增加数据失败');

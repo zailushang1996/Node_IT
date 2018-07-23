@@ -47,40 +47,25 @@ app.get('/',function(req,res){
 
 
 
-    MongoClient.connect(DBurl,function(err,db){
-        if(err){
-
-            console.log('连接数据库失败');
+    MongoClient.connect(DBurl,function (err, db) {
+        if (err) {
+            console.log("连接失败");
             return;
         }
+        var list = [];
+        var result = db.collection('student').find({});
 
-        //查询数据
-        var list=[];  /*放数据库里面查询的所有数据*/
-
-        var result=db.collection('user').find({});
-
-
-        result.each(function(error,doc){
-
-
-            //console.log(doc);
-                if(error){
-                    console.log(error);
-                }else{
-
-                    if(doc!=null){
-                        list.push(doc);
-
-                    }else{  /*doc==null表示数据循环完成*/
-
-                        console.log(list);
-                    }
-
+        result.each(function (error, doc) {
+            if (error) {
+                console.log(error);
+            } else {
+                if (doc != null) {
+                    list.push(doc);
+                } else {
+                    console.log(list);
                 }
-
-        })
-
-        //console.log(result);
+            }
+        });
 
     })
 
@@ -103,7 +88,7 @@ app.get('/add',function(req,res){
             return;
         }
 
-        db.collection('user').insertOne({"name":'lisi',"age":40},function(error,data){
+        db.collection('student').insertOne({"name":'lisi',"age":40},function(error,data){
 
             if(error){
                 console.log('增加数据失败');

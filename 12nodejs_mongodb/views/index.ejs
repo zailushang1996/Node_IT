@@ -2,14 +2,20 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <title></title>
+    <title></title>
 </head>
 <body>
 
 
-    <h2>这是一个ejs的后台模板引擎</h2>
+<h2>这是一个ejs的后台模板引擎111</h2>
 
-    <h2><%=msg%></h2>
+
+<ul>
+
+    <%for(var i=0;i<list.length;i++){%>
+    <li><%=list[i].name%></li>
+    <%}%>
+</ul>
 
 
 </body>
